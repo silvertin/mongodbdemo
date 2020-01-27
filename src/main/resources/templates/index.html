@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/pageLayout/defaultPageLayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>mongodb test</title>
+</head>
+<body>
+<button type="button" onclick="location.href='http://localhost:8080/dbdata'">추가</button>
+<table class="tb_col">
+    <tr>
+        <th>_id</th>
+        <th>title</th>
+        <th>image</th>
+    </tr>
+    <tr th:each="eventdoc : ${eventdocList}">
+        <td th:text="${eventdoc._id}"></td>
+        <td th:text="${eventdoc.title}"></td>
+        <td th:text="${eventdoc.image}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
